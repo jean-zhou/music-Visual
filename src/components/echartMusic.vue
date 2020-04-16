@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="EchartMusic">
     <input id="fileChooser" type="file" />
     <div id="myChart" :style="{width: '800px', height: '800px'}"></div>
   </div>
@@ -8,10 +8,12 @@
 <script>
 import Vue from "vue";
 import echarts from "echarts";
+import echartsGL from 'echarts-gl' // 引入echarts
+Vue.prototype.$echartsGL = echartsGL // 引入组件（将echarts注册为全局）
 Vue.prototype.$echarts = echarts;
 
 export default {
-  name: "home",
+  name: "EchartMusic",
   mounted() {
     this.drawLine();
   },
